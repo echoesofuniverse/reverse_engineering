@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="employees" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.DeptManager" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="dept_manager">
+		<composite-id class="com.echoes.DTO.DeptManagerId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="empNo" type="int">
+				<column name="emp_no" />
+			</key-property>
+			<key-property name="deptNo" type="string">
+				<column length="4" name="dept_no" />
+			</key-property>
+		</composite-id>
+		<many-to-one class="com.echoes.DTO.Departments" embed-xml="true"
+			fetch="select" insert="false" name="departments" not-found="exception"
+			optimistic-lock="true" unique="false" update="false">
+			<column length="4" name="dept_no" not-null="true" />
+		</many-to-one>
+		<many-to-one class="com.echoes.DTO.Employees" embed-xml="true"
+			fetch="select" insert="false" name="employees" not-found="exception"
+			optimistic-lock="true" unique="false" update="false">
+			<column name="emp_no" not-null="true" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="fromDate"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="from_date" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="toDate"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="to_date" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-schema="myschool" match-name="parent" />
+	<table-filter match-schema="myschool" match-name="student_parent" />
+	<table-filter match-schema="myschool" match-name="student" />
+	<table-filter match-schema="myschool" match-name="school" />
+	<table-filter match-schema="myschool" match-name="class_student" />
+	<table-filter match-schema="myschool" match-name="class" />
+	<table-filter match-schema="myschool" match-name="classroom" />
+	<table-filter match-schema="myschool" match-name="subject" />
+	<table-filter match-schema="myschool" match-name="teacher" />
+</hibernate-reverse-engineering>

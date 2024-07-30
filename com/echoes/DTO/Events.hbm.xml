@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="eventsite" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.Events" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="events">
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="availability"
+			optimistic-lock="true" type="java.lang.Integer" unique="false">
+			<column name="availability" />
+		</property>
+		<property generated="never" lazy="false" name="dateOfEvent"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="date_of_event" />
+		</property>
+		<property generated="never" lazy="false" name="description"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="description" />
+		</property>
+		<property generated="never" lazy="false" name="endTime"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="end_time" />
+		</property>
+		<property generated="never" lazy="false" name="price"
+			optimistic-lock="true" type="java.lang.Double" unique="false">
+			<column name="price" precision="22" scale="0" />
+		</property>
+		<property generated="never" lazy="false" name="published"
+			optimistic-lock="true" type="java.lang.Boolean" unique="false">
+			<column name="published" />
+		</property>
+		<property generated="never" lazy="false" name="startTime"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="start_time" />
+		</property>
+		<property generated="never" lazy="false" name="title"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="title" />
+		</property>
+		<property generated="never" lazy="false" name="venueAddress"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="venue_address" />
+		</property>
+		<property generated="never" lazy="false" name="venueName"
+			optimistic-lock="true" type="string" unique="false">
+			<column name="venue_name" />
+		</property>
+	</class>
+</hibernate-mapping>

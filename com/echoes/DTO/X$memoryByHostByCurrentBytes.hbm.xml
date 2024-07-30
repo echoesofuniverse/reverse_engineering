@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.X$memoryByHostByCurrentBytes"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="x$memory_by_host_by_current_bytes">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.X$memoryByHostByCurrentBytesId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="host" type="string">
+				<column name="host" />
+			</key-property>
+			<key-property name="currentCountUsed" type="big_decimal">
+				<column name="current_count_used" precision="41" scale="0" />
+			</key-property>
+			<key-property name="currentAllocated" type="big_decimal">
+				<column name="current_allocated" precision="41" scale="0" />
+			</key-property>
+			<key-property name="currentAvgAlloc" type="big_decimal">
+				<column name="current_avg_alloc" precision="45" scale="4" />
+			</key-property>
+			<key-property name="currentMaxAlloc" type="java.lang.Long">
+				<column name="current_max_alloc" />
+			</key-property>
+			<key-property name="totalAllocated" type="big_decimal">
+				<column name="total_allocated" precision="42" scale="0" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

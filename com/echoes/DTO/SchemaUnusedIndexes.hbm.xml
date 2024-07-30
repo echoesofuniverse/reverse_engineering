@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.SchemaUnusedIndexes"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="schema_unused_indexes">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.SchemaUnusedIndexesId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="objectSchema" type="string">
+				<column length="64" name="object_schema" />
+			</key-property>
+			<key-property name="objectName" type="string">
+				<column length="64" name="object_name" />
+			</key-property>
+			<key-property name="indexName" type="string">
+				<column length="64" name="index_name" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

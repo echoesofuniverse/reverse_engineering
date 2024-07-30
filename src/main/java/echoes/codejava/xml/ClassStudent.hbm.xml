@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 24 Jul, 2024 12:06:13 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="myschool" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="echoes.codejava.xml.ClassStudent"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="class_student">
+		<id name="classStudentId" type="long">
+			<column name="class_student_id" />
+			<generator class="assigned" />
+		</id>
+		<many-to-one class="echoes.codejava.xml.Class" embed-xml="true"
+			fetch="select" insert="true" name="class" not-found="exception"
+			optimistic-lock="true" unique="false" update="true">
+			<column name="class_id" />
+		</many-to-one>
+		<many-to-one class="echoes.codejava.xml.Student"
+			embed-xml="true" fetch="select" insert="true" name="student"
+			not-found="exception" optimistic-lock="true" unique="false" update="true">
+			<column name="student_id" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

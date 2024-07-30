@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.X$psDigestAvgLatencyDistribution"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="x$ps_digest_avg_latency_distribution">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.X$psDigestAvgLatencyDistributionId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="cnt" type="long">
+				<column name="cnt" />
+			</key-property>
+			<key-property name="avgUs" type="big_decimal">
+				<column name="avg_us" precision="21" scale="0" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

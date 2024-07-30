@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.X$waitClassesGlobalByAvgLatency"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="x$wait_classes_global_by_avg_latency">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.X$waitClassesGlobalByAvgLatencyId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="eventClass" type="string">
+				<column length="128" name="event_class" />
+			</key-property>
+			<key-property name="total" type="big_decimal">
+				<column name="total" precision="42" scale="0" />
+			</key-property>
+			<key-property name="totalLatency" type="big_decimal">
+				<column name="total_latency" precision="42" scale="0" />
+			</key-property>
+			<key-property name="minLatency" type="java.lang.Long">
+				<column name="min_latency" />
+			</key-property>
+			<key-property name="avgLatency" type="big_decimal">
+				<column name="avg_latency" precision="46" scale="4" />
+			</key-property>
+			<key-property name="maxLatency" type="java.lang.Long">
+				<column name="max_latency" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

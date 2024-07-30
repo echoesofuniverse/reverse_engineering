@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.X$userSummary" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="x$user_summary">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.X$userSummaryId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="user" type="string">
+				<column length="32" name="user" />
+			</key-property>
+			<key-property name="statements" type="big_decimal">
+				<column name="statements" precision="64" scale="0" />
+			</key-property>
+			<key-property name="statementLatency" type="big_decimal">
+				<column name="statement_latency" precision="64" scale="0" />
+			</key-property>
+			<key-property name="statementAvgLatency" type="big_decimal">
+				<column name="statement_avg_latency" precision="65" scale="4" />
+			</key-property>
+			<key-property name="tableScans" type="big_decimal">
+				<column name="table_scans" precision="65" scale="0" />
+			</key-property>
+			<key-property name="fileIos" type="big_decimal">
+				<column name="file_ios" precision="64" scale="0" />
+			</key-property>
+			<key-property name="fileIoLatency" type="big_decimal">
+				<column name="file_io_latency" precision="64" scale="0" />
+			</key-property>
+			<key-property name="currentConnections" type="big_decimal">
+				<column name="current_connections" precision="41" scale="0" />
+			</key-property>
+			<key-property name="totalConnections" type="big_decimal">
+				<column name="total_connections" precision="41" scale="0" />
+			</key-property>
+			<key-property name="uniqueHosts" type="long">
+				<column name="unique_hosts" />
+			</key-property>
+			<key-property name="currentMemory" type="big_decimal">
+				<column name="current_memory" precision="63" scale="0" />
+			</key-property>
+			<key-property name="totalMemoryAllocated" type="big_decimal">
+				<column name="total_memory_allocated" precision="64" scale="0" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

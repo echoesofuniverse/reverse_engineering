@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.MemoryGlobalByCurrentBytes"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="memory_global_by_current_bytes">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.MemoryGlobalByCurrentBytesId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="eventName" type="string">
+				<column length="128" name="event_name" />
+			</key-property>
+			<key-property name="currentCount" type="long">
+				<column name="current_count" />
+			</key-property>
+			<key-property name="currentAlloc" type="string">
+				<column length="11" name="current_alloc" />
+			</key-property>
+			<key-property name="currentAvgAlloc" type="string">
+				<column length="11" name="current_avg_alloc" />
+			</key-property>
+			<key-property name="highCount" type="long">
+				<column name="high_count" />
+			</key-property>
+			<key-property name="highAlloc" type="string">
+				<column length="11" name="high_alloc" />
+			</key-property>
+			<key-property name="highAvgAlloc" type="string">
+				<column length="11" name="high_avg_alloc" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

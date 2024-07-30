@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="myschool" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.Student" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="student">
+		<id name="studentId" type="java.lang.Integer">
+			<column name="student_id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one class="com.echoes.DTO.School" embed-xml="true"
+			fetch="select" insert="true" name="school" not-found="exception"
+			optimistic-lock="true" unique="false" update="true">
+			<column name="school_id" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="studentCode"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="12" name="student_code" />
+		</property>
+		<property generated="never" lazy="false" name="studentFullName"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="50" name="student_full_name" />
+		</property>
+		<property generated="never" lazy="false" name="gender"
+			optimistic-lock="true" type="java.lang.Short" unique="false">
+			<column name="gender" />
+		</property>
+		<property generated="never" lazy="false" name="dob"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="dob" />
+		</property>
+		<property generated="never" lazy="false" name="email"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="75" name="email" />
+		</property>
+		<property generated="never" lazy="false" name="phone"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="15" name="phone" />
+		</property>
+		<property generated="never" lazy="false" name="stage"
+			optimistic-lock="true" type="java.lang.Integer" unique="false">
+			<column name="stage" />
+		</property>
+		<property generated="never" lazy="false" name="section"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="2" name="section" />
+		</property>
+		<property generated="never" lazy="false" name="isActive"
+			optimistic-lock="true" type="java.lang.Short" unique="false">
+			<column name="is_active" />
+		</property>
+		<property generated="never" lazy="false" name="joinDate"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="join_date" />
+		</property>
+		<property generated="never" lazy="false" name="createdAt"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="19" name="created_at" />
+		</property>
+		<property generated="never" lazy="false" name="updatedAt"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="19" name="updated_at" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="studentParents" optimistic-lock="true" sort="unsorted"
+			table="student_parent">
+			<key on-delete="noaction">
+				<column name="student_id" />
+			</key>
+			<one-to-many class="com.echoes.DTO.StudentParent"
+				embed-xml="true" not-found="exception" />
+		</set>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="classStudents" optimistic-lock="true" sort="unsorted"
+			table="class_student">
+			<key on-delete="noaction">
+				<column name="student_id" />
+			</key>
+			<one-to-many class="com.echoes.DTO.ClassStudent"
+				embed-xml="true" not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

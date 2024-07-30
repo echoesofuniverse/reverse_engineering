@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.X$statementsWithTempTables"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="x$statements_with_temp_tables">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.X$statementsWithTempTablesId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="query" type="string">
+				<column name="query" />
+			</key-property>
+			<key-property name="db" type="string">
+				<column length="64" name="db" />
+			</key-property>
+			<key-property name="execCount" type="long">
+				<column name="exec_count" />
+			</key-property>
+			<key-property name="totalLatency" type="long">
+				<column name="total_latency" />
+			</key-property>
+			<key-property name="memoryTmpTables" type="long">
+				<column name="memory_tmp_tables" />
+			</key-property>
+			<key-property name="diskTmpTables" type="long">
+				<column name="disk_tmp_tables" />
+			</key-property>
+			<key-property name="avgTmpTablesPerQuery" type="big_decimal">
+				<column name="avg_tmp_tables_per_query" precision="21" scale="0" />
+			</key-property>
+			<key-property name="tmpTablesToDiskPct" type="big_decimal">
+				<column name="tmp_tables_to_disk_pct" precision="24" scale="0" />
+			</key-property>
+			<key-property name="firstSeen" type="timestamp">
+				<column length="26" name="first_seen" />
+			</key-property>
+			<key-property name="lastSeen" type="timestamp">
+				<column length="26" name="last_seen" />
+			</key-property>
+			<key-property name="digest" type="string">
+				<column length="64" name="digest" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.InnodbBufferStatsByTable"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="innodb_buffer_stats_by_table">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.InnodbBufferStatsByTableId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="objectSchema" type="string">
+				<column length="65535" name="object_schema" />
+			</key-property>
+			<key-property name="objectName" type="string">
+				<column length="65535" name="object_name" />
+			</key-property>
+			<key-property name="allocated" type="string">
+				<column length="11" name="allocated" />
+			</key-property>
+			<key-property name="data" type="string">
+				<column length="11" name="data" />
+			</key-property>
+			<key-property name="pages" type="long">
+				<column name="pages" />
+			</key-property>
+			<key-property name="pagesHashed" type="long">
+				<column name="pages_hashed" />
+			</key-property>
+			<key-property name="pagesOld" type="long">
+				<column name="pages_old" />
+			</key-property>
+			<key-property name="rowsCached" type="big_decimal">
+				<column name="rows_cached" precision="45" scale="0" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

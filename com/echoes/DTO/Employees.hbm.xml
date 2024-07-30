@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="employees" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.Employees" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="employees">
+		<id name="empNo" type="int">
+			<column name="emp_no" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="birthDate"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="birth_date" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="firstName"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="14" name="first_name" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="lastName"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="16" name="last_name" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="gender"
+			optimistic-lock="true" type="char" unique="false">
+			<column length="1" name="gender" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="hireDate"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="hire_date" not-null="true" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="titleses" optimistic-lock="true" sort="unsorted"
+			table="titles">
+			<key on-delete="noaction">
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.echoes.DTO.Titles" embed-xml="true"
+				not-found="exception" />
+		</set>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="salarieses" optimistic-lock="true" sort="unsorted"
+			table="salaries">
+			<key on-delete="noaction">
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.echoes.DTO.Salaries" embed-xml="true"
+				not-found="exception" />
+		</set>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="deptEmps" optimistic-lock="true" sort="unsorted"
+			table="dept_emp">
+			<key on-delete="noaction">
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.echoes.DTO.DeptEmp" embed-xml="true"
+				not-found="exception" />
+		</set>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="deptManagers" optimistic-lock="true" sort="unsorted"
+			table="dept_manager">
+			<key on-delete="noaction">
+				<column name="emp_no" not-null="true" />
+			</key>
+			<one-to-many class="com.echoes.DTO.DeptManager"
+				embed-xml="true" not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

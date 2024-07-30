@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.X$schemaFlattenedKeys"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="x$schema_flattened_keys">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.X$schemaFlattenedKeysId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="tableSchema" type="string">
+				<column length="64" name="table_schema" />
+			</key-property>
+			<key-property name="tableName" type="string">
+				<column length="64" name="table_name" />
+			</key-property>
+			<key-property name="indexName" type="string">
+				<column length="64" name="index_name" />
+			</key-property>
+			<key-property name="nonUnique" type="java.lang.Integer">
+				<column name="non_unique" />
+			</key-property>
+			<key-property name="subpartExists" type="java.lang.Long">
+				<column name="subpart_exists" />
+			</key-property>
+			<key-property name="indexColumns" type="string">
+				<column length="65535" name="index_columns" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

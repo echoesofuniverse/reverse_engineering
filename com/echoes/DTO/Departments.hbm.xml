@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="employees" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.Departments" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="departments">
+		<id name="deptNo" type="string">
+			<column length="4" name="dept_no" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="deptName"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="40" name="dept_name" not-null="true" unique="true" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="deptEmps" optimistic-lock="true" sort="unsorted"
+			table="dept_emp">
+			<key on-delete="noaction">
+				<column length="4" name="dept_no" not-null="true" />
+			</key>
+			<one-to-many class="com.echoes.DTO.DeptEmp" embed-xml="true"
+				not-found="exception" />
+		</set>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="deptManagers" optimistic-lock="true" sort="unsorted"
+			table="dept_manager">
+			<key on-delete="noaction">
+				<column length="4" name="dept_no" not-null="true" />
+			</key>
+			<one-to-many class="com.echoes.DTO.DeptManager"
+				embed-xml="true" not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

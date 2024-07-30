@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="employees" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.DeptEmpLatestDate"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="dept_emp_latest_date">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.DeptEmpLatestDateId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="empNo" type="int">
+				<column name="emp_no" />
+			</key-property>
+			<key-property name="fromDate" type="date">
+				<column length="10" name="from_date" />
+			</key-property>
+			<key-property name="toDate" type="date">
+				<column length="10" name="to_date" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

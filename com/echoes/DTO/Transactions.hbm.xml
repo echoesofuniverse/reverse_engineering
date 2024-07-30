@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sales" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.Transactions" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="transactions">
+		<composite-id class="com.echoes.DTO.TransactionsId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="productCode" type="string">
+				<column length="45" name="product_code" />
+			</key-property>
+			<key-property name="customerCode" type="string">
+				<column length="45" name="customer_code" />
+			</key-property>
+			<key-property name="marketCode" type="string">
+				<column length="45" name="market_code" />
+			</key-property>
+			<key-property name="orderDate" type="date">
+				<column length="10" name="order_date" />
+			</key-property>
+			<key-property name="salesQty" type="java.lang.Integer">
+				<column name="sales_qty" />
+			</key-property>
+			<key-property name="salesAmount" type="java.lang.Double">
+				<column name="sales_amount" precision="22" scale="0" />
+			</key-property>
+			<key-property name="currency" type="string">
+				<column length="45" name="currency" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

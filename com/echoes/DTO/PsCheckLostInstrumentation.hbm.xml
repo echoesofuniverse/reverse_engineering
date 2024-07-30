@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.PsCheckLostInstrumentation"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="ps_check_lost_instrumentation">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.PsCheckLostInstrumentationId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="variableName" type="string">
+				<column length="64" name="variable_name" />
+			</key-property>
+			<key-property name="variableValue" type="string">
+				<column length="1024" name="variable_value" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>

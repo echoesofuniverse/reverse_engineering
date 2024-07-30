@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sales" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.Date" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="date">
+		<id name="date" type="date">
+			<column length="10" name="date" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="cyDate"
+			optimistic-lock="true" type="date" unique="false">
+			<column length="10" name="cy_date" />
+		</property>
+		<property generated="never" lazy="false" name="year"
+			optimistic-lock="true" type="java.lang.Integer" unique="false">
+			<column name="year" />
+		</property>
+		<property generated="never" lazy="false" name="monthName"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="45" name="month_name" />
+		</property>
+		<property generated="never" lazy="false" name="dateYyMmm"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="45" name="date_yy_mmm" />
+		</property>
+	</class>
+</hibernate-mapping>

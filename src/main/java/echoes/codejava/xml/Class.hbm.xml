@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 24 Jul, 2024 12:06:13 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="myschool" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="echoes.codejava.xml.Class" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="class">
+		<id name="classId" type="int">
+			<column name="class_id" />
+			<generator class="assigned" />
+		</id>
+		<many-to-one class="echoes.codejava.xml.Classroom"
+			embed-xml="true" fetch="select" insert="true" name="classroom"
+			not-found="exception" optimistic-lock="true" unique="false" update="true">
+			<column name="classroom_id" />
+		</many-to-one>
+		<many-to-one class="echoes.codejava.xml.Subject"
+			embed-xml="true" fetch="select" insert="true" name="subject"
+			not-found="exception" optimistic-lock="true" unique="false" update="true">
+			<column name="subject_id" />
+		</many-to-one>
+		<many-to-one class="echoes.codejava.xml.Teacher"
+			embed-xml="true" fetch="select" insert="true" name="teacher"
+			not-found="exception" optimistic-lock="true" unique="false" update="true">
+			<column name="teacher_id" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="className"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="50" name="class_name" />
+		</property>
+		<property generated="never" lazy="false" name="section"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="2" name="section" />
+		</property>
+		<property generated="never" lazy="false" name="createdAt"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="19" name="created_at" />
+		</property>
+		<property generated="never" lazy="false" name="updatedAt"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="19" name="updated_at" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="classStudents" optimistic-lock="true" sort="unsorted"
+			table="class_student">
+			<key on-delete="noaction">
+				<column name="class_id" />
+			</key>
+			<one-to-many class="echoes.codejava.xml.ClassStudent"
+				embed-xml="true" not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

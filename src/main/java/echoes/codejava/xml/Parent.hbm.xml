@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 24 Jul, 2024 12:06:13 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="myschool" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="echoes.codejava.xml.Parent" optimistic-lock="version"
+		polymorphism="implicit" select-before-update="false" table="parent">
+		<id name="parentId" type="int">
+			<column name="parent_id" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="parentCode"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="12" name="parent_code" />
+		</property>
+		<property generated="never" lazy="false" name="parentFullName"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="50" name="parent_full_name" />
+		</property>
+		<property generated="never" lazy="false" name="email"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="100" name="email" />
+		</property>
+		<property generated="never" lazy="false" name="phone"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="20" name="phone" />
+		</property>
+		<property generated="never" lazy="false" name="createdAt"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="19" name="created_at" />
+		</property>
+		<property generated="never" lazy="false" name="updatedAt"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="19" name="updated_at" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="studentParents" optimistic-lock="true" sort="unsorted"
+			table="student_parent">
+			<key on-delete="noaction">
+				<column name="parent_id" />
+			</key>
+			<one-to-many class="echoes.codejava.xml.StudentParent"
+				embed-xml="true" not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

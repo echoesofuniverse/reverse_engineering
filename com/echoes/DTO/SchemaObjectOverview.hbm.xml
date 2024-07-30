@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 23 Jul, 2024 8:38:27 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="sys" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="com.echoes.DTO.SchemaObjectOverview"
+		optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="schema_object_overview">
+		<comment>VIEW</comment>
+		<composite-id class="com.echoes.DTO.SchemaObjectOverviewId"
+			mapped="false" name="id" unsaved-value="undefined">
+			<key-property name="db" type="string">
+				<column length="64" name="db" />
+			</key-property>
+			<key-property name="objectType" type="string">
+				<column length="19" name="object_type" />
+			</key-property>
+			<key-property name="count" type="long">
+				<column name="count" />
+			</key-property>
+		</composite-id>
+	</class>
+</hibernate-mapping>
